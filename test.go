@@ -7,26 +7,38 @@ type MyStruct struct {
 	B string
 	C float64
 	D bool
-	E MySlice
-	F *MySlice
-	G []MySlice
-	H map[string]MySlice
-	I []*MySlice
+	E SubData
+	F *SubData
+	G []SubData
+	H map[string]SubData
+	I []*SubData
 	J time.Time
 	K uint32
 	L Some
 }
 
-type MySlice struct {
+type SubData struct {
 	ID   uint64
 	Data string
 	More bool
 }
 
-type MoreStructs struct {
+type ArrayMyStruct struct {
 	Data [1000]MyStruct
 }
 
-type MoreSlice struct {
-	Data [1000]MySlice
+type ArraySubData struct {
+	Data [1000]SubData
+}
+
+type ArrayReferenceSubData struct {
+	Data *[1000]SubData
+}
+
+type SliceSubData struct {
+	Data []SubData
+}
+
+type SliceReferenceSubData struct {
+	Data *[]SubData
 }
