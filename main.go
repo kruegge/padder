@@ -9,19 +9,10 @@ import (
 	"os"
 	"reflect"
 	"strconv"
-	"time"
 	"unsafe"
 
 	"golang.org/x/tools/go/packages"
 )
-
-// CustomTypes is a map to store custom type names and their reflect.Type
-var CustomTypes = map[string]reflect.Type{
-	"MySlice":   reflect.TypeOf(MySlice{}),
-	"MyStruct":  reflect.TypeOf(MyStruct{}),
-	"time.Time": reflect.TypeOf(time.Time{}),
-	"Some":      reflect.TypeOf(Some{}),
-}
 
 // ReportStructMemory reports memory usage and padding for a given struct type
 func ReportStructMemory(v interface{}) {
